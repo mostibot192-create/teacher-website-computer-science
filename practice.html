@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Педагогічна практика в ЗСО</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <style>
+        /* Додаткові стилі для сторінки практики */
+        .practice-hero {
+            background: linear-gradient(135deg, #39202D, #636D64);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 50px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .practice-hero::before {
+            content: "📚";
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            bottom: -30px;
+            right: -30px;
+            transform: rotate(-15deg);
+        }
+
+        .hero-content {
+            flex: 2;
+        }
+
+        .hero-content h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+
+        .hero-content p {
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        .hero-photo {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-photo img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #FFD700;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-photo img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Грид для 2 колонок */
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .practice-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border-left: 5px solid #C4AB7D;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0;
+        }
+
+        .practice-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .practice-card h3 {
+            color: #39202D;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #C4AB7D;
+            padding-bottom: 10px;
+        }
+
+        .practice-card ul {
+            padding-left: 20px;
+            flex: 1;
+        }
+
+        .practice-card li {
+            margin: 12px 0;
+            line-height: 1.5;
+        }
+
+        .timeline {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            margin: 50px 0 30px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .timeline h3 {
+            color: #39202D;
+            margin-bottom: 25px;
+            font-size: 1.6em;
+            text-align: center;
+        }
+
+        .lessons-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .lesson-item {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 10px;
+            border-left: 3px solid #C4AB7D;
+            font-size: 0.95em;
+        }
+
+        .materials-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
+            flex: 1;
+        }
+
+        .material-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #39202D;
+            transition: all 0.3s ease;
+            border-left: 4px solid #C4AB7D;
+        }
+
+        .material-link:hover {
+            background: #39202D;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .material-link:hover .material-icon {
+            color: #FFD700;
+        }
+
+        .material-icon {
+            font-size: 1.3em;
+        }
+
+        .material-info {
+            flex: 1;
+        }
+
+        .material-title {
+            font-weight: bold;
+            margin-bottom: 3px;
+            font-size: 0.95em;
+        }
+
+        .material-type {
+            font-size: 0.75em;
+            opacity: 0.7;
+        }
+
+        /* Роздільник між блоками */
+        .section-divider {
+            margin: 20px 0;
+        }
+
+        /* Адаптивність */
+        @media (max-width: 768px) {
+            .practice-hero {
+                padding: 30px 20px;
+                flex-direction: column;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            .hero-content {
+                text-align: center;
+            }
+            .practice-hero h2 {
+                font-size: 1.6em;
+            }
+            .hero-photo img {
+                width: 140px;
+                height: 140px;
+            }
+            .practice-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin: 30px 0;
+            }
+            .lessons-list {
+                grid-template-columns: 1fr;
+            }
+            .timeline {
+                padding: 25px;
+                margin: 30px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<button class="menu-toggle" id="menuToggle">☰</button>
+
+<header id="mainHeader">
+    <div class="container">
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="about.html">Про вчителя</a></li>
+                <li><a href="materials.html">Матеріали</a></li>
+                <li><a href="methodology.html">Методика</a></li>
+                <li><a href="planning.html">Планування</a></li>
+                <li><a href="tests.html">Тести</a></li>
+                <li><a href="practice.html" class="active">Педагогічна практика</a></li>
+                <li><a href="contacts.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container" id="mainContent">
+    <h1>Педагогічна практика в ЗСО</h1>
+
+    <div class="practice-hero">
+        <div class="hero-content">
+            <h2>📖 Шипук Богдан Володимирович</h2>
+            <p>Студент спеціальності 015.39 «Професійна освіта (Цифрові технології)»</p>
+            <p>Педагогічну практику проходив у <strong>Кучанському ліцеї Новошицької селищної ради Хмельницької області</strong> з 23 лютого 2026 року по 22 березня 2026 року.</p>
+            <p><strong>Мета практики:</strong> закріплення теоретичних знань, набуття практичних навичок викладання інформатики та ознайомлення з організацією освітнього процесу в закладі загальної середньої освіти.</p>
+        </div>
+        <div class="hero-photo">
+            <img src="images/photo_2026-04-01_02-24-51.jpg" alt="Шипук Богдан Володимирович">
+        </div>
+    </div>
+
+    <!-- Перший ряд з 2 колонок -->
+    <div class="practice-grid">
+        <!-- Про базу практики -->
+        <div class="practice-card">
+            <h3>🏫 Про базу практики</h3>
+            <p><strong>Кучанський ліцей Новошицької селищної ради Хмельницької області</strong> — це заклад загальної середньої освіти, який забезпечує якісне навчання та виховання учнів.</p>
+            <p>У ліцеї створено сприятливі умови для навчання, працюють досвідчені педагоги, використовується сучасне обладнання. Особливу роль відіграє кабінет інформатики, який оснащений комп'ютерами та необхідним програмним забезпеченням для проведення уроків.</p>
+            <p>Під час практики робота проводилася з учнями <strong>6 класу (16 учнів)</strong>, які проявляли інтерес до навчання та активно брали участь у заняттях.</p>
+        </div>
+
+        <!-- Моя діяльність -->
+        <div class="practice-card">
+            <h3>💼 Моя діяльність</h3>
+            <p>Під час проходження педагогічної практики я виконував такі види діяльності:</p>
+            <ul>
+                <li>відвідував та аналізував уроки вчителя інформатики;</li>
+                <li>самостійно проводив уроки у 6–8 класах;</li>
+                <li>готував конспекти уроків та навчальні матеріали;</li>
+                <li>створював мультимедійні презентації;</li>
+                <li>використовував інтерактивні сервіси (Google Classroom, Classtime, Kahoot);</li>
+                <li>проводив виховні бесіди з учнями;</li>
+                <li>допомагав в організації навчально-виховного процесу;</li>
+                <li>здійснював індивідуальну роботу з учнями.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Другий ряд з 2 колонок -->
+    <div class="practice-grid">
+        <!-- Проведені уроки -->
+        <div class="practice-card">
+            <h3>📚 Проведені уроки</h3>
+            <p>Під час практики було проведено <strong>12 уроків</strong> з інформатики у 6–8 класах на теми:</p>
+            <div class="lessons-list">
+                <div class="lesson-item">Інструктаж з БЖД. Цикли з лічильником</div>
+                <div class="lesson-item">Проєкти з циклами</div>
+                <div class="lesson-item">Редагування аудіо- та відеопроєктів</div>
+                <div class="lesson-item">Створення електронних таблиць. Діаграми</div>
+                <div class="lesson-item">Лінійні алгоритми зі змінними</div>
+                <div class="lesson-item">Алгоритми з вкладеними циклами</div>
+                <div class="lesson-item">Розробка сценаріїв мультимедійних продуктів</div>
+                <div class="lesson-item">Створення відеофільму</div>
+            </div>
+        </div>
+
+        <!-- Виховні заходи -->
+        <div class="practice-card">
+            <h3>🎭 Виховні заходи</h3>
+            <p>Під час практики було проведено виховну роботу з учнями 6 класу:</p>
+            <ul>
+                <li>бесіда про правила безпеки в кабінеті інформатики;</li>
+                <li>контроль відвідування та ведення щоденників;</li>
+                <li>індивідуальні бесіди з учнями щодо навчання;</li>
+                <li>обговорення культури спілкування;</li>
+                <li>анкетування учнів щодо інтересів у сфері ІТ.</li>
+            </ul>
+            <p><strong>Виховний захід:</strong> «Професія майбутнього, де потрібна інформатика» — учні дізналися про професії програмістів, веб-дизайнерів, кіберфахівців, аналітиків даних та штучного інтелекту. Захід пройшов у форматі інтерактивної бесіди з вікториною та переглядом мотиваційних відеороликів.</p>
+        </div>
+    </div>
+<!-- Третій ряд з 2 колонок -->
+<div class="practice-grid">
+    <!-- Методичні матеріали -->
+    <div class="practice-card">
+        <h3>📖 Методичні матеріали</h3>
+        <p>Під час проходження практики було розроблено та використано такі навчально-методичні матеріали:</p>
+        <div class="materials-list">
+            <a href="material/Презентація_Алгоритми.ppt" class="material-link" target="_blank">
+                <span class="material-icon">📊</span>
+                <div class="material-info">
+                    <div class="material-title">Презентація «Алгоритми»</div>
+                    <div class="material-type">PPT (відкриється в браузері)</div>
+                </div>
+            </a>
+            <a href="material/Презентація_Лінійні_алгоритми.pptx" class="material-link" target="_blank">
+                <span class="material-icon">📊</span>
+                <div class="material-info">
+                    <div class="material-title">Презентація «Лінійні алгоритми»</div>
+                    <div class="material-type">PPTX (відкриється в браузері)</div>
+                </div>
+            </a>
+            <a href="material/Презентація_Цикли_з_передумовою.pptx" class="material-link" target="_blank">
+                <span class="material-icon">📊</span>
+                <div class="material-info">
+                    <div class="material-title">Презентація «Цикли з передумовою»</div>
+                    <div class="material-type">PPTX (відкриється в браузері)</div>
+                </div>
+            </a>
+            <a href="material/Конспект_Уроків 1.docx" class="material-link" target="_blank">
+                <span class="material-icon">📝</span>
+                <div class="material-info">
+                    <div class="material-title">Конспект №1 «Електронні таблиці. Діаграми»</div>
+                    <div class="material-type">DOCX (відкриється в браузері)</div>
+                </div>
+            </a>
+            <a href="material/Конспект_Уроків 2.docx" class="material-link" target="_blank">
+                <span class="material-icon">📝</span>
+                <div class="material-info">
+                    <div class="material-title">Конспект №2 «Редагування відеопроєктів»</div>
+                    <div class="material-type">DOCX (відкриється в браузері)</div>
+                </div>
+            </a>
+            <a href="material/Конспект_Уроків 3.docx" class="material-link" target="_blank">
+                <span class="material-icon">📝</span>
+                <div class="material-info">
+                    <div class="material-title">Конспект №3 «Розробка сценаріїв»</div>
+                    <div class="material-type">DOCX (відкриється в браузері)</div>
+                </div>
+            </a>
+            <a href="material/Конспект_Уроків 4.docx" class="material-link" target="_blank">
+                <span class="material-icon">📝</span>
+                <div class="material-info">
+                    <div class="material-title">Конспект №4 «Вкладені цикли»</div>
+                    <div class="material-type">DOCX (відкриється в браузері)</div>
+                </div>
+            </a>
+        </div>
+            <p style="margin-top: 15px;">Дані матеріали використовувалися під час проведення уроків з інформатики та сприяли кращому засвоєнню навчального матеріалу учнями.</p>
+        </div>
+
+        <!-- Відгук керівника практики -->
+        <div class="practice-card">
+            <h3>📝 Відгук керівника практики</h3>
+            <p><em>Шипук Богдан Володимирович проходив практику в Кучанському ліцеї Новошицької селищної ради Хмельницької області. Під час практики викладав інформатику у 6–8 класах під керівництвом вчителя інформатики Юркевича Романа Юрійовича.</em></p>
+            <p><em>У процесі проходження практики проведено 12 уроків з інформатики (навчальна програма за підручниками Ривкінд Й.Я. — теми: «Комп'ютерні презентації», «Алгоритми та програми», «Інтернет та безпека») у 6–8 класах.</em></p>
+            <p><em>Під час практики використовував інтерактивні та інноваційні методи навчання: мультимедійні презентації, інтерактивні завдання, онлайн-сервіси, навчальні вправи та елементи обговорення.</em></p>
+            <p><em>За час практики зарекомендував себе як відповідальний, дисциплінований, творчий студент, який сумлінно виконує поставлені завдання, вміє організувати навчальний процес та знаходити підхід до учнів.</em></p>
+        </div>
+    </div>
+
+    <!-- Висновки на всю ширину -->
+    <div class="timeline">
+        <h3>📌 Висновки</h3>
+        <p>Педагогічна практика стала важливим етапом мого професійного розвитку. Під час її проходження я закріпив теоретичні знання та отримав практичний досвід роботи вчителя інформатики.</p>
+        <p>Я навчився планувати та проводити уроки, використовувати сучасні цифрові технології, організовувати роботу учнів та підтримувати дисципліну в класі. Особливу увагу приділяв індивідуальному підходу до учнів та створенню сприятливої атмосфери на заняттях.</p>
+        <p>Практика допомогла мені краще зрозуміти особливості педагогічної діяльності, навчила відповідальності, організованості та комунікації з учнями. Загалом практика була корисною та цікавою, підтвердила мій вибір професії та мотивувала до подальшого розвитку у сфері освіти та цифрових технологій.</p>
+    </div>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-text">© 2026 Вчитель інформатики - Шипук Богдан Володимирович</div>
+        <div class="social-links">
+            <a href="tel:+380628133862" class="social-link">📞 +38 (062) 813-38-62</a>
+            <span class="contact-separator">|</span>
+            <a href="https://instagram.com/mostikik" class="social-link" target="_blank">📷 @mostikik</a>
+            <span class="contact-separator">|</span>
+            <a href="https://t.me/mostiKik" class="social-link telegram" target="_blank">✈️ @mostiKik</a>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
